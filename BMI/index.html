@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Index</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(202, 202, 202);
+    }
+    form{
+        background-color: rgba(127, 255, 212, 0.426);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 10px;
+    }
+    .form_component{
+        border-radius: 5px;
+        background-color: rgba(250, 250, 250, 0.397);
+        padding: 8px;
+        margin: 10px 3px ;
+        display: block;
+        height: 40px;
+        width: auto;
+    }
+    input{
+        padding: 3px;
+        border-radius: 3px;
+        float: right;
+    }
+    label{
+        padding: 3px;
+        float: left;
+    }
+    button{
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        border: none;
+        font-weight: bolder;
+        font-size: larger;
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    </style>
+<body>
+    <main>
+        <form id="calc" onsubmit="calculate()">
+            <h2>
+            BMI Calculator
+            </h2>
+            <div class="height form_component">
+                <label for="height">Enter height (in meters)</label><input type="number" name="height" id="height">
+            </div>
+            <div class="weight form_component">
+                <label for="weight">Enter weight (in Kg)</label><input type="weight" name="weight" id="weight">
+            </div>            
+            <div class="form_component">
+            <button type="submit">Calculate</button>
+            </div>
+
+        </form>
+    </main>
+</body>
+<script>
+    function calculate() {
+        var h = parseFloat(document.getElementById('height').value);
+        var w = parseFloat(document.getElementById('weight').value);
+
+        var BMI = w/(h * h/10000)
+
+        alert("You BMI is " + BMI)
+    }
+</script>
+</html>
