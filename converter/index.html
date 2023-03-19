@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature converter</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        background-color: rgb(202, 202, 202);
+    }
+    form{
+        background-color: rgba(127, 255, 212, 0.426);
+        padding: 30px;
+        border-radius: 10px;
+        text-align: center;
+        margin: 10px;
+    }
+    .form_component{
+        border-radius: 5px;
+        background-color: rgba(250, 250, 250, 0.397);
+        padding: 8px;
+        margin: 10px 3px ;
+        display: block;
+        height: 40px;
+        width: auto;
+    }
+    input{
+        padding: 3px;
+        border-radius: 3px;
+        float: right;
+    }
+    label{
+        padding: 3px;
+        float: left;
+    }
+    button{
+        height: 100%;
+        width: 100%;
+        border-radius: 4px;
+        border: none;
+        font-weight: bolder;
+        font-size: larger;
+        background: rgba(255, 255, 255, 0);
+    }
+    
+    </style>
+<body>
+    <main>
+        <form onsubmit="convert()">
+            <h2>
+            Temperature converter
+            </h2>
+            <div class="form_component">
+                <label for="celsius">Enter celcius</label><input type="number" name="celsius" id="celsius">
+            </div>
+            <div class="form_component">
+                <label for="farenheit">Enter farenheit</label><input type="number" name="farenheit" id="farenheit">
+            </div>            <div class="form_component">
+                <label for="kelvin">Enter kelvin</label><input type="number" name="kelvin" id="kelvin" >
+            </div>
+
+        </form>
+    </main>
+</body>
+<script>
+    const c = document.getElementById("celsius");
+    const f = document.getElementById("farenheit");
+    const k = document.getElementById("kelvin");
+
+    c.addEventListener("keyup", function(){
+        let degreeCelsius = parseFloat(c.value)
+        f.value = (degreeCelsius * Math.round(9/5)) + 32
+        k.value = degreeCelsius + 273.15
+    });
+
+    f.addEventListener("keyup", function(){
+        let degreeFarenheit = Number(f.value)
+        c.value = (degreeFarenheit -32) * Math.round(5/9)
+        k.value = Number(c.value) + 273.15
+    });
+
+    k.addEventListener("keyup", function () {
+        let degreeKelvin = Number(k.value)
+        c.value = degreeKelvin - 273.15
+        f.value = (Number(c.value) * Math.round(9/5)) + 32 
+    });
+
+</script>
+</html>

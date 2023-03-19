@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: large;
+    }
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: rgb(202, 202, 202);
+    }
+    .calculator{
+        height: 60vh;
+        background-color: rgba(127, 255, 212, 0.426);
+        border-radius: 10px;
+        padding: 5px;
+        width: 400px
+    }
+    .display{
+        width: 100%;
+        height: 30%;
+    }
+    #cal_string{
+        width: 90%;
+        height: 80%;
+        border-radius: 10px;
+        margin: auto;
+        text-align: right;
+    }
+    .buttons{
+        width:100%;
+        height: 70%;
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+        grid-template-rows: auto auto auto auto;
+    }
+    span{
+        font-size: larger;
+        margin: 2px;
+        padding: 3px;
+        text-align: center;
+        border-radius: 3px;
+        background-color: rgba(255, 255, 255, 0.413);
+    }
+</style>
+<body>
+    <header>
+        <h1>Calculator</h1>
+    </header>
+    <main>
+        <div class="calculator">
+            <div class="display">
+                <input name="cal_string" id="cal_string"  type="text" readonly placeholder="0">
+            </div>
+            <div class="buttons">
+                <span>7</span> 
+                <span>8</span>
+                <span>9</span> 
+                <span>/</span>
+                <span>4</span> 
+                <span>5</span> 
+                <span>6</span> 
+                <span>*</span>
+                <span>1</span> 
+                <span>2</span> 
+                <span>3</span> 
+                <span>-</span>
+                <span>C</span> <span>0</span> <span>=</span> <span>+</span>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
